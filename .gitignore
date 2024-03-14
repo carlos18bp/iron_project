@@ -1,0 +1,9 @@
+db.sqlite3
+iron/__pycache__/
+iron/management/commands/__pycache__/
+iron/migrations/__pycache__/
+iron/models/__pycache__/
+iron/serializers/__pycache__/
+iron/views/__pycache__/
+iron_project/__pycache__/
+media/blog_images
