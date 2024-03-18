@@ -1,5 +1,4 @@
 <template>
-  <!-- Dropdown menu -->
   <div
     id="dropdown"
     class="z-10 hidden divide-y divide-gray-100 rounded-lg shadow bg-header_p bg-opacity-50">

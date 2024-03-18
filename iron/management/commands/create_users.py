@@ -12,24 +12,35 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         number_of_users = options['number_of_users']
         fake = Faker()
-        project_options = ['Balconies',
-                               'Doors',
-                               'Fences',
-                               'Furniture',
-                               'Gates',
-                               'Home Decor',
-                               'Lighting']
+        project_options = [
+            'Balconies',
+            'Doors',
+            'Fences',
+            'Furniture',
+            'Gates',
+            'Home Decor',
+            'Lighting',
+            'Railings',
+            'Restoration',
+            'Sculptures',
+            'Wine Cellars',
+            'Other'
+            ]
         
-        profession_options = ['Home Owner',
-                      'Designer',
-                      'Architect',
-                      'Contractor',
-                      'Other']
+        profession_options = [
+            'Home Owner',
+            'Designer',
+            'Architect',
+            'Contractor',
+            'Other'
+            ]
         
-        hear_about_us_options = ['Web page',
-                         'Instagram',
-                         'Friend',
-                         'Internet']
+        hear_about_us_options = [
+            'Web page',
+            'Instagram',
+            'Friend',
+            'Internet'
+            ]
 
         for _ in range(number_of_users):
             new_user = User.objects.create(
