@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-header_p bg-opacity-50 flex justify-between p-3 fixed w-full">
+  <header class="bg-header_p bg-opacity-50 flex justify-between p-3 fixed w-full top-0">
     <a href="#" class="overflow-hidden size-10 ml-4">
       <img
         src="@/assets/images/logo_1.png"
