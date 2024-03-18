@@ -13,6 +13,11 @@ def users_serializer(users):
             'lastName': user.last_name,
             'email': user.email,
             'contact': user.contact,
+            'subject': user.subject,
+            'description': user.description,
+            'projects': user.projects,
+            'professions': user.professions,
+            'hear_about_us': user.hear_about_us
         }
         users_serialized.append(user_data)
 
