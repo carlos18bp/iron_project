@@ -6,9 +6,16 @@ export default {
     "./node_modules/flowbite/**/*.js",
   ],
   theme: {
-    extend: {},
-    colors: {
-      header_p: '#131313',
+    extend: {
+      fontFamily: {
+        'bold': ['Roboto-Bold', 'sans-serif'],
+        'regular': ['Roboto-Regular', 'sans-serif'],
+        'light': ['Roboto-Light', 'sans-serif'],
+      },
+      colors: {
+        'gray_p': '#2F2E2E',
+        'header_p': '#131313',
+      }
     },
   },
   plugins: [

@@ -18,3 +18,13 @@
     await userStore.init();
   });
 </script>
+
+<style>
+      body {
+        overflow-x: hidden;
+      }
+      #app {
+        max-width: 100vw; 
+        overflow-x: hidden; 
+      }
+</style>
