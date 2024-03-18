@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
     extend: {},
+    colors: {
+      header_p: '#131313',
+    },
   },
   plugins: [
     require('@tailwindcss/aspect-ratio'),
