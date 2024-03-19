@@ -12,7 +12,6 @@
         <RouterLink class="font-light" :to="{ name: 'home' }">home</RouterLink>
       </a>
       <a
-        href="#"
         id="WhatWeDoDropdown" 
         data-dropdown-toggle="dropdown" 
         class="inline-flex items-center font-light">

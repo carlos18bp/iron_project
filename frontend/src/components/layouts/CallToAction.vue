@@ -1,7 +1,7 @@
 <template>
   <div>
     <button
-      class="bg-gray_p px-12 py-4 text-white font-regular text-2xl uppercase"
+      class="bg-gray_p px-16 py-4 text-white font-regular text-2xl uppercase"
       @click="handleButtonClick">
       {{ text }}
     </button>

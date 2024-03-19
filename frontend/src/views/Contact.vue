@@ -6,14 +6,6 @@
 
   <section id="goToDownContact" class="flex mt-10">
     <Form></Form>
-    <div class="mt-8 p-8">
-      <p class="uppercase text-2xl pb-4">Contact</p>
-      <p class="uppercase text-1xl">Showroom</p>
-      <p class="text-lg">4457 Main St</p>
-      <p class="text-lg">Philadelphia, PA 19127</p>
-      <p class="text-lg pt-4">Phone: 215.483.9273</p>
-      <p class="text-lg">Hours: Monday to Friday: 9-5pm</p>
-    </div>
   </section>
 
   <FAQ></FAQ>
