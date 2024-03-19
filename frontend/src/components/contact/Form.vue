@@ -1,16 +1,17 @@
 <template>
-  <form class="p-4 flex flex-col space-y-4 w-1/2">
+  <form class="p-4 pl-8 flex flex-col space-y-4 w-1/2" @submit.prevent="onSubmit">
     <div class="flex space-x-8">
       <div class="w-1/2">
         <label
           for="first_name"
-          class="block mb-2 text-sm font-medium text-gray-900"
-          >First name</label
-        >
+          class="block font-regular mb-2 text-sm font-medium text-gray-900">
+          First name <span class="text-red-600">*</span>
+        </label>
         <input
+          v-model="contactFormData.firstName"
           type="text"
           id="first_name"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-400 focus:border-blue-500 block w-full"
           placeholder="Type your first name"
           required
         />
@@ -19,13 +20,14 @@
       <div class="w-1/2">
         <label
           for="last_name"
-          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-          >Last name</label
-        >
+          class="block font-regular mb-2 text-sm font-medium text-gray-900">
+          Last name <span class="text-red-600">*</span>
+        </label>
         <input
+          v-model="contactFormData.lastName"
           type="text"
           id="last_name"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-400 focus:border-blue-500 block w-full"
           placeholder="Type your last name"
           required
         />
@@ -33,13 +35,14 @@
     </div>
 
     <div>
-      <label for="email" class="block mb-2 text-sm font-medium text-gray-900"
-        >Email address</label
-      >
+      <label for="email" class="block font-regular mb-2 text-sm font-medium text-gray-900">
+        Email address <span class="text-red-600">*</span>
+      </label>
       <input
+        v-model="contactFormData.email"
         type="email"
         id="email"
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-400 focus:border-blue-500 block w-full"
         placeholder="Type your email"
         required
       />
@@ -48,13 +51,14 @@
     <div>
       <label
         for="subject"
-        class="block mb-2 text-sm font-medium text-gray-900"
-        >Subject</label
-      >
+        class="block mb-2 text-sm font-medium text-gray-900">
+        Subject <span class="text-red-600">*</span>
+      </label>
       <input
+        v-model="contactFormData.subject"
         type="text"
         id="subject"
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-400 focus:border-blue-500 block w-full"
         placeholder="Type subject"
         required
       />
@@ -63,261 +67,269 @@
     <div>
       <label
         for="project"
-        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-        >Tell us a little bit about your project</label
-      >
+        class="block mb-2 text-sm font-medium text-gray-900">
+        Tell us a little bit about your project <span class="text-red-600">*</span>
+      </label>
       <textarea
+        v-model="contactFormData.description"
         id="project"
         rows="4"
-        class="block p-2.5 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 w-full"
+        class="block p-2.5 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-orange-400 focus:border-blue-500 w-full"
         placeholder="Write your thoughts here..."
         required
       >
       </textarea>
     </div>
 
-    <div class="flex flex-col">
-      <label
-        for="project"
-        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-        >What type of project are you interested in?</label
-      >
-      <div class="flex items-center">
-        <input
-          id="balconies-checkbox"
-          type="checkbox"
-          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-        />
+    <div class="flex">
+      <div class="flex flex-col w-1/2">
         <label
-          for="balconies-checkbox"
-          class="ms-2 text-sm font-medium text-gray-900"
-          >Balconies</label
-        >
+          for="project"
+          class="block mb-2 text-sm font-medium text-gray-900">
+          What type of project are you interested in? <span class="text-red-600">*</span>
+        </label>
+        <div class="flex items-center">
+          <input
+            v-model="contactFormData.checkboxProjects.balconies"
+            id="balconies-checkbox"
+            type="checkbox"
+            class="w-4 h-4 text-orange-400 bg-gray-100 border-gray-300 rounded focus:ring-orange-400"
+          />
+          <label
+            for="balconies-checkbox"
+            class="ms-2 text-sm font-medium text-gray-900">
+            Balconies
+          </label>
+        </div>
+        <div class="flex items-center">
+          <input
+            v-model="contactFormData.checkboxProjects.doors"
+            id="doors-checkbox"
+            type="checkbox"
+            class="w-4 h-4 text-orange-400 bg-gray-100 border-gray-300 rounded focus:ring-orange-400"
+          />
+          <label
+            for="doors-checkbox"
+            class="ms-2 text-sm font-medium text-gray-900">
+            Doors
+          </label>
+        </div>
+        <div class="flex items-center">
+          <input
+            v-model="contactFormData.checkboxProjects.fences"
+            id="fences-checkbox"
+            type="checkbox"
+            class="w-4 h-4 text-orange-400 bg-gray-100 border-gray-300 rounded focus:ring-orange-400"
+          />
+          <label
+            for="fences-checkbox"
+            class="ms-2 text-sm font-medium text-gray-900">
+            Fences
+          </label>
+        </div>
+        <div class="flex items-center">
+          <input
+            v-model="contactFormData.checkboxProjects.furniture"
+            id="furniture-checkbox"
+            type="checkbox"
+            class="w-4 h-4 text-orange-400 bg-gray-100 border-gray-300 rounded focus:ring-orange-400"
+          />
+          <label
+            for="furniture-checkbox"
+            class="ms-2 text-sm font-medium text-gray-900">
+            Furniture
+          </label>
+        </div>
+        <div class="flex items-center">
+          <input
+            v-model="contactFormData.checkboxProjects.gates"
+            id="gates-checkbox"
+            type="checkbox"
+            class="w-4 h-4 text-orange-400 bg-gray-100 border-gray-300 rounded focus:ring-orange-400"
+          />
+          <label
+            for="gates-checkbox"
+            class="ms-2 text-sm font-medium text-gray-900">
+            Gates
+          </label>
+        </div>
+        <div class="flex items-center">
+          <input
+            v-model="contactFormData.checkboxProjects.homeDecor"
+            id="home-decor-checkbox"
+            type="checkbox"
+            class="w-4 h-4 text-orange-400 bg-gray-100 border-gray-300 rounded focus:ring-orange-400"
+          />
+          <label
+            for="home-decor-checkbox"
+            class="ms-2 text-sm font-medium text-gray-900">
+            Home Decor
+          </label>
+        </div>
+        <div class="flex items-center">
+          <input
+            v-model="contactFormData.checkboxProjects.lighting"
+            id="lighting-checkbox"
+            type="checkbox"
+            class="w-4 h-4 text-orange-400 bg-gray-100 border-gray-300 rounded focus:ring-orange-400"
+          />
+          <label
+            for="lighting-checkbox"
+            class="ms-2 text-sm font-medium text-gray-900">
+            Lighting
+          </label>
+        </div>
+        <div class="flex items-center">
+          <input
+            v-model="contactFormData.checkboxProjects.railings"
+            id="railings-checkbox"
+            type="checkbox"
+            class="w-4 h-4 text-orange-400 bg-gray-100 border-gray-300 rounded focus:ring-orange-400"
+          />
+          <label
+            for="railings-checkbox"
+            class="ms-2 text-sm font-medium text-gray-900">
+            Railings
+          </label>
+        </div>
+        <div class="flex items-center">
+          <input
+            v-model="contactFormData.checkboxProjects.restoration"
+            id="restoration-checkbox"
+            type="checkbox"
+            class="w-4 h-4 text-orange-400 bg-gray-100 border-gray-300 rounded focus:ring-orange-400"
+          />
+          <label
+            for="restoration-checkbox"
+            class="ms-2 text-sm font-medium text-gray-900">
+            Restoration
+          </label>
+        </div>
+        <div class="flex items-center">
+          <input
+            v-model="contactFormData.checkboxProjects.sculptures"
+            id="sculptures-checkbox"
+            type="checkbox"
+            class="w-4 h-4 text-orange-400 bg-gray-100 border-gray-300 rounded focus:ring-orange-400"
+          />
+          <label
+            for="sculptures-checkbox"
+            class="ms-2 text-sm font-medium text-gray-900">
+            Sculptures
+          </label>
+        </div>
+        <div class="flex items-center">
+          <input
+            v-model="contactFormData.checkboxProjects.wineCellars"
+            id="wine-cellars-checkbox"
+            type="checkbox"
+            class="w-4 h-4 text-orange-400 bg-gray-100 border-gray-300 rounded focus:ring-orange-400"
+          />
+          <label
+            for="wine-cellars-checkbox"
+            class="ms-2 text-sm font-medium text-gray-900">
+            Wine Cellars
+          </label>
+        </div>
+        <div class="flex items-center">
+          <input
+            v-model="contactFormData.checkboxProjects.other"
+            id="other-checkbox"
+            type="checkbox"
+            class="w-4 h-4 text-orange-400 bg-gray-100 border-gray-300 rounded focus:ring-orange-400"
+          />
+          <label
+            for="other-checkbox"
+            class="ms-2 text-sm font-medium text-gray-900">
+            Other
+          </label>
+        </div>
       </div>
-      <div class="flex items-center">
-        <input
-          id="doors-checkbox"
-          type="checkbox"
-          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-        />
-        <label
-          for="doors-checkbox"
-          class="ms-2 text-sm font-medium text-gray-900"
-          >Doors</label
-        >
-      </div>
-      <div class="flex items-center">
-        <input
-          id="fences-checkbox"
-          type="checkbox"
-          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-        />
-        <label
-          for="fences-checkbox"
-          class="ms-2 text-sm font-medium text-gray-900"
-          >Fences</label
-        >
-      </div>
-      <div class="flex items-center">
-        <input
-          id="furniture-checkbox"
-          type="checkbox"
-          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-        />
-        <label
-          for="furniture-checkbox"
-          class="ms-2 text-sm font-medium text-gray-900"
-          >Furniture</label
-        >
-      </div>
-      <div class="flex items-center">
-        <input
-          id="gates-checkbox"
-          type="checkbox"
-          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-        />
-        <label
-          for="gates-checkbox"
-          class="ms-2 text-sm font-medium text-gray-900"
-          >Gates</label
-        >
-      </div>
-      <div class="flex items-center">
-        <input
-          id="home-decor-checkbox"
-          type="checkbox"
-          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-        />
-        <label
-          for="home-decor-checkbox"
-          class="ms-2 text-sm font-medium text-gray-900"
-          >Home Decor</label
-        >
-      </div>
-      <div class="flex items-center">
-        <input
-          id="lighting-checkbox"
-          type="checkbox"
-          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-        />
-        <label
-          for="lighting-checkbox"
-          class="ms-2 text-sm font-medium text-gray-900"
-          >Lighting</label
-        >
-      </div>
-      <div class="flex items-center">
-        <input
-          id="balconies-checkbox"
-          type="checkbox"
-          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-        />
-        <label
-          for="balconies-checkbox"
-          class="ms-2 text-sm font-medium text-gray-900"
-          >Balconies</label
-        >
-      </div>
-      <div class="flex items-center">
-        <input
-          id="railings-checkbox"
-          type="checkbox"
-          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-        />
-        <label
-          for="railings-checkbox"
-          class="ms-2 text-sm font-medium text-gray-900"
-          >Railings</label
-        >
-      </div>
-      <div class="flex items-center">
-        <input
-          id="restoration-checkbox"
-          type="checkbox"
-          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-        />
-        <label
-          for="restoration-checkbox"
-          class="ms-2 text-sm font-medium text-gray-900"
-          >Restoration</label
-        >
-      </div>
-      <div class="flex items-center">
-        <input
-          id="sculptures-checkbox"
-          type="checkbox"
-          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-        />
-        <label
-          for="sculptures-checkbox"
-          class="ms-2 text-sm font-medium text-gray-900"
-          >Sculptures</label
-        >
-      </div>
-      <div class="flex items-center">
-        <input
-          id="wine-cellars-checkbox"
-          type="checkbox"
-          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-        />
-        <label
-          for="wine-cellars-checkbox"
-          class="ms-2 text-sm font-medium text-gray-900"
-          >Wine Cellars</label
-        >
-      </div>
-      <div class="flex items-center">
-        <input
-          id="other-checkbox"
-          type="checkbox"
-          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-        />
-        <label
-          for="other-checkbox"
-          class="ms-2 text-sm font-medium text-gray-900"
-          >Other</label
-        >
-      </div>
-    </div>
 
-    <div class="flex flex-col">
-      <label
-        for="project"
-        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-        >What type of project are you interested in?</label
-      >
-      <div class="flex items-center">
-        <input
-          id="home-owner-checkbox"
-          type="checkbox"
-          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-        />
+      <div class="flex flex-col">
         <label
-          for="home-owner-checkbox"
-          class="ms-2 text-sm font-medium text-gray-900"
-          >Home Owner</label
-        >
-      </div>
-      <div class="flex items-center">
-        <input
-          id="designer-checkbox"
-          type="checkbox"
-          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-        />
-        <label
-          for="designer-checkbox"
-          class="ms-2 text-sm font-medium text-gray-900"
-          >Designer</label
-        >
-      </div>
-      <div class="flex items-center">
-        <input
-          id="architect-checkbox"
-          type="checkbox"
-          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-        />
-        <label
-          for="architect-checkbox"
-          class="ms-2 text-sm font-medium text-gray-900"
-          >Architect</label
-        >
-      </div>
-      <div class="flex items-center">
-        <input
-          id="contractor-checkbox"
-          type="checkbox"
-          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-        />
-        <label
-          for="contractor-checkbox"
-          class="ms-2 text-sm font-medium text-gray-900"
-          >Contractor</label
-        >
-      </div>
-      <div class="flex items-center">
-        <input
-          id="other-checkbox"
-          type="checkbox"
-          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-        />
-        <label
-          for="other-checkbox"
-          class="ms-2 text-sm font-medium text-gray-900"
-          >Other</label
-        >
+          for="project"
+          class="block mb-2 text-sm font-medium text-gray-900">
+          Are you a home owner, designer, architect pr contractor? <span class="text-red-600">*</span>
+        </label>
+        <div class="flex items-center">
+          <input
+            v-model="contactFormData.checkboxProfessions.homeOwner"
+            id="home-owner-checkbox"
+            type="checkbox"
+            class="w-4 h-4 text-orange-400 bg-gray-100 border-gray-300 rounded focus:ring-orange-400"
+          />
+          <label
+            for="home-owner-checkbox"
+            class="ms-2 text-sm font-medium text-gray-900">
+            Home Owner
+          </label>
+        </div>
+        <div class="flex items-center">
+          <input
+            v-model="contactFormData.checkboxProfessions.designer"
+            id="designer-checkbox"
+            type="checkbox"
+            class="w-4 h-4 text-orange-400 bg-gray-100 border-gray-300 rounded focus:ring-orange-400"
+          />
+          <label
+            for="designer-checkbox"
+            class="ms-2 text-sm font-medium text-gray-900">
+            Designer
+          </label>
+        </div>
+        <div class="flex items-center">
+          <input
+            v-model="contactFormData.checkboxProfessions.architect"
+            id="architect-checkbox"
+            type="checkbox"
+            class="w-4 h-4 text-orange-400 bg-gray-100 border-gray-300 rounded focus:ring-orange-400"
+          />
+          <label
+            for="architect-checkbox"
+            class="ms-2 text-sm font-medium text-gray-900">
+            Architect
+          </label>
+        </div>
+        <div class="flex items-center">
+          <input
+            v-model="contactFormData.checkboxProfessions.contact"
+            id="contractor-checkbox"
+            type="checkbox"
+            class="w-4 h-4 text-orange-400 bg-gray-100 border-gray-300 rounded focus:ring-orange-400"
+          />
+          <label
+            for="contractor-checkbox"
+            class="ms-2 text-sm font-medium text-gray-900">
+            Contractor
+          </label>
+        </div>
+        <div class="flex items-center">
+          <input
+            v-model="contactFormData.checkboxProfessions.other"
+            id="other-checkbox"
+            type="checkbox"
+            class="w-4 h-4 text-orange-400 bg-gray-100 border-gray-300 rounded focus:ring-orange-400"
+          />
+          <label
+            for="other-checkbox"
+            class="ms-2 text-sm font-medium text-gray-900">
+            Other
+          </label>
+        </div>
       </div>
     </div>
 
     <div>
       <label
         for="phone-input"
-        class="block mb-2 text-sm font-medium text-gray-900"
-        >Phone number</label
-      >
+        class="block mb-2 text-sm font-medium text-gray-900">
+        Phone number <span class="text-red-600">*</span>
+      </label>
       <div
         class="flex items-center space-x-4">
         <svg
-          class="w-4 h-4 text-gray-500 dark:text-gray-400"
+          class="w-4 h-4 text-gray-500"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
@@ -327,12 +339,12 @@
           />
         </svg>
         <input
+          v-model="contactFormData.contact"
           type="text"
           id="phone-input"
           aria-describedby="helper-text-explanation"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full"
-          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-          placeholder="123-456-7890"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-400 focus:border-blue-500 block w-full"
+          placeholder="Type your phone number"
           required
         />
       </div>
@@ -342,21 +354,71 @@
       <label
         for="hear_about_us"
         class="block mb-2 text-sm font-medium text-gray-900">
-        Select an option
+        How did your hear about us? <span class="text-red-600">*</span>
       </label>
       <select
+        v-model="contactFormData.hearAboutUs"
         id="hear_about_us"
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full">
-        <option selected>Choose an option</option>
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-orange-400 focus:border-blue-500 block w-full">
+        <option disabled selected>Choose an option</option>
         <option value="Web page">Web page</option>
         <option value="Instagram">Instagram</option>
         <option value="Friend">Friend</option>
         <option value="Internet">Internet</option>
         <option value="Other">Other</option>
       </select>
+
+      <button
+        type="submit"
+        class="mt-8 text-white bg-gray_p hover:bg-black px-8 py-4 font-regular text-1xl uppercase">
+        Submit
+      </button>
     </div>
   </form>
 </template>
 
 <script setup>
+  import { reactive } from "vue";
+  import { submitHandler } from "@/shared/submit_handler";
+
+  const contactFormData = reactive({
+    firstName: "",
+    lastName: "",
+    email: "",
+    contact: "",
+    subject: "",
+    description: "",
+    checkboxProjects: {},
+    checkboxProfessions: {
+      'Home Owner': false,
+      'Designer': false,
+      'Architect': false,
+      'Contractor': false,
+      'Other': false
+    },
+    hearAboutUs: "Choose an option",
+  });
+
+  /**
+   * Submit event.
+   */
+  const onSubmit = () => {
+    submitHandler(contactFormData, "Submited!");
+    cleanForm();
+  };
+
+  /**
+   * Clean review form
+   */
+  const cleanForm = () => {
+    contactFormData.firstName = "";
+    contactFormData.lastName = "";
+    contactFormData.email = "";
+    contactFormData.contact = "";
+    contactFormData.subject = "";
+    contactFormData.description = "";
+    contactFormData.checkboxProjects = {};
+    contactFormData.checkboxProfessions = {};
+    contactFormData.hearAboutUs = "Choose an option";
+  };
 </script>
