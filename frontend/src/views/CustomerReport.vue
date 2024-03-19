@@ -1,20 +1,19 @@
 <template>
   <Header></Header>
-  <section class="overflow-x-auto mt-16 p-4">
+  <section class="w-full mt-16 p-4">
     <table
-      class="w-full text-sm text-left rtl:text-right text-gray-400 overflow-hidden rounded-lg"
-    >
+      class="overflow-x-auto w-full text-sm text-left text-gray-400">
       <thead class="text-xs uppercase bg-gray-700 text-gray-400">
-        <tr class="rounded-lg">
+        <tr>
           <th scope="col" class="px-6 py-3">#</th>
-          <th scope="col" class="px-6 py-3">User full name</th>
+          <th scope="col" class="px-6 py-3 w-48">User full name</th>
           <th scope="col" class="px-6 py-3">Email</th>
           <th scope="col" class="px-6 py-3">contact</th>
           <th scope="col" class="px-6 py-3">Subject</th>
-          <th scope="col" class="px-6 py-3">Description</th>
-          <th scope="col" class="px-6 py-3">Projects of interest</th>
-          <th scope="col" class="px-6 py-3">Profession(s)</th>
-          <th scope="col" class="px-6 py-3">Where hear about us</th>
+          <th scope="col" class="px-6 py-3 w-96">Description</th>
+          <th scope="col" class="px-6 py-3 w-48">Projects of interest</th>
+          <th scope="col" class="px-6 py-3 w-48">Profession(s)</th>
+          <th scope="col" class="px-6 py-3 w-48">Where hear about us</th>
         </tr>
       </thead>
       <tbody>
@@ -44,14 +43,14 @@
           <td class="px-6 py-4">
             {{ user.description }}
           </td>
-          <td class="py-4">
+          <td class="px-6 py-4">
             <ul>
               <li v-for="project in user.projects" :key="project">
                 - {{ project }}
               </li>
             </ul>
           </td>
-          <td class="py-4">
+          <td class="px-6 py-4">
             <ul>
               <li v-for="profession in user.professions" :key="profession">
                 - {{ profession }}
