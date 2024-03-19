@@ -10,6 +10,7 @@ def blog_serializer(blogs):
         blog_data = {
             'id': blog.id,
             'title': blog.title,
+            'category': blog.category,
             'description': blog.description,
             'image_url': blog.image.url if blog.image else '',
         }

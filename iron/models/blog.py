@@ -6,6 +6,8 @@ class Blog(models.Model):
 
     :ivar title: title blog.
     :vartype title: str
+    :ivar category: title blog.
+    :vartype category: str
     :ivar description: description blog.
     :vartype description: str
     :ivar image: image by blog.
@@ -13,6 +15,7 @@ class Blog(models.Model):
     """
 
     title = models.CharField(max_length=200)
+    category = models.CharField(max_length=200)
     description = models.TextField()
     image = models.ImageField(upload_to='blog_images/', null=True, blank=True)
 

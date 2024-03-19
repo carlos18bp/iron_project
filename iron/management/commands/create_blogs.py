@@ -18,6 +18,7 @@ class Command(BaseCommand):
         for _ in range(number_of_blogs):
             new_blog = Blog.objects.create(
                 title = fake.word(),
+                category = fake.word(),
                 description  = fake.text(max_nb_chars=400),
             )
 
