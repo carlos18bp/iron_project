@@ -10,9 +10,9 @@
       
       <div class="w-1/2 p-16 h-auto absolute right-0 top-1/4 inline-block">
           <div class="w-full p-16 h-auto relative inline-block custom-background">
-            <p class="text-3xl font-regular">{{ props.data.text }}</p>
+            <p class="text-3xl font-regular" v-html=" props.data.text"></p>
           </div>
-          <div class="flex justify-end">
+          <div v-if="props.data.button.text" class="flex justify-end">
               <button class="p-4 h-auto relative inline-block custom-background">
                 <a class="text-lg border-b-2 border-black pe-4 font-regular">{{ props.data.button.text }}</a>
               </button>

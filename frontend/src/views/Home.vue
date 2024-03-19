@@ -115,7 +115,7 @@
     },
     title: "Forged Legacies:<br>Where Tradition Meets<br>MODERNITY",
     classes: "text-white",
-    goToId: 'goToDownHome'
+    goToId: 'goToDownHome',
   };
 
   const history1 = {
