@@ -7,7 +7,7 @@
   <section id="goToDownHome" class="my-28 px-16">
     <div class="flex justify-evenly">
       <div class="inline-block">
-        <img src="@/assets/images/home/carousel/OrnamentalWorks.jpg" alt="Ornamental carousel"/>
+        <img src="@/assets/images/home/carousel/OrnamentalWorks.jpg" class="w-72" alt="Ornamental carousel"/>
         <div class="flex justify-center h-24">
           <div
             class="w-3/4 px-4 py-2 h-full bg-gray_p grid justify-center content-center mt-2">
@@ -20,7 +20,7 @@
       </div>
 
       <div class="inline-block">
-        <img src="@/assets/images/home/carousel/ArtisticWorks.png" alt="Artistic carousel" />
+        <img src="@/assets/images/home/carousel/ArtisticWorks.png" class="w-72" alt="Artistic carousel" />
         <div class="flex justify-center h-24">
           <div
             class="w-3/4 px-4 py-2 h-full bg-gray_p grid justify-center content-center mt-2">
@@ -33,7 +33,7 @@
       </div>
 
       <div class="inline-block">
-        <img src="@/assets/images/home/carousel/Furniture.png" alt="Furniture carousel" />
+        <img src="@/assets/images/home/carousel/Furniture.png" class="w-72" alt="Furniture carousel" />
         <div class="flex justify-center h-24">
           <div
             class="w-3/4 px-4 py-2 h-full bg-gray_p grid justify-center content-center mt-2">
@@ -46,7 +46,7 @@
       </div>
 
       <div class="inline-block">
-        <img src="@/assets/images/home/carousel/Design.png" alt="..." />
+        <img src="@/assets/images/home/carousel/Design.png" class="w-72" alt="..." />
         <div class="flex justify-center h-24">
           <div
             class="w-3/4 px-4 py-2 h-full bg-gray_p grid justify-center content-center mt-2">

@@ -378,8 +378,10 @@
 </template>
 
 <script setup>
-  import { reactive } from "vue";
+  import { reactive, onMounted } from "vue";
   import { submitHandler } from "@/shared/submit_handler";
+
+  let geetest = '';
 
   const contactFormData = reactive({
     firstName: "",
@@ -398,15 +400,14 @@
     },
     hearAboutUs: "Choose an option",
   });
-
+  
   /**
    * Submit event.
    */
   const onSubmit = () => {
-    submitHandler(contactFormData, "Submited!");
-    cleanForm();
+    geetest.showBox()
   };
-
+  
   /**
    * Clean review form
    */
@@ -421,4 +422,28 @@
     contactFormData.checkboxProfessions = {};
     contactFormData.hearAboutUs = "Choose an option";
   };
+  onMounted ( () => {
+  initGeetest4(
+    {
+      // Omit required configuration parameters
+
+      product: "bind",
+      captchaId: "1a4ad98cb6ead7c70d67784d91461598",
+        },
+        function (captchaObj) {
+          geetest = captchaObj;
+          captchaObj
+            .onReady(function () {
+              // please call the showCaptcha method to show the CAPTCHA when it is ready
+            })
+            .onSuccess(function () {
+              submitHandler(contactFormData, "Submited!");
+              cleanForm();
+            })
+            .onError(function () {
+              //your code
+            });
+        }
+      );
+    })
 </script>
