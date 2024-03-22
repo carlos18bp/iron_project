@@ -12,6 +12,7 @@
           <div
             class="w-3/4 px-4 py-2 h-full bg-gray_p grid justify-center content-center mt-2">
             <a
+              href="ornamental"
               class="text-center font-regular flex justify-center text-white text-3xl">
               Ornamental<br/>Works
             </a>
@@ -25,6 +26,7 @@
           <div
             class="w-3/4 px-4 py-2 h-full bg-gray_p grid justify-center content-center mt-2">
             <a
+              href="artistic"
               class="text-center font-regular flex justify-center text-white text-3xl">
               Artistic<br/>Works
             </a>
@@ -38,6 +40,7 @@
           <div
             class="w-3/4 px-4 py-2 h-full bg-gray_p grid justify-center content-center mt-2">
             <a
+              href="furniture"
               class="text-center font-regular flex justify-center text-white text-3xl">
               Furtniture
             </a>
@@ -51,6 +54,7 @@
           <div
             class="w-3/4 px-4 py-2 h-full bg-gray_p grid justify-center content-center mt-2">
             <a
+              href="design"
               class="text-center font-regular flex justify-center text-white text-3xl">
               Design
             </a>
@@ -126,7 +130,7 @@
     text: "Transform your living or workspace into a gallery of elegance and distinction with our exclusive collection of decorative ironwork.",
     button: {
       text: "CONTACT",
-      link: "",
+      link: "contact",
     },
   };
 
@@ -138,7 +142,7 @@
     text: "Our portfolio includes bespoke gates, intricate grilles, elegant railings, and statement furniture, each designed to elevate the aesthetic of your environment.",
     button: {
       text: "ABOUT",
-      link: "",
+      link: "about_us",
     },
   };
 
@@ -150,7 +154,7 @@
     text: "Join us in redefining luxury and style with ironwork that's more than just decoration—it's a lifestyle.",
     button: {
       text: "ABOUT",
-      link: "",
+      link: "about_us",
     },
   };
 </script>
