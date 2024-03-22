@@ -11,7 +11,7 @@
       </div>
       <div class="w-full flex flex-col justify-center pl-20">
         <p
-          class="font-regular tracking-widest text-lg text-gray_p uppercase pb-2">
+          class="font-light tracking-widest text-lg text-gray_p uppercase pb-2">
           {{ firstBlog.category }}
         </p>
         <h1 class="py-3">
@@ -21,7 +21,7 @@
               name: 'blog',
               params: { blog_id: firstBlog.id },
             }"
-            class="font-regular font-bold text-3xl tracking-wider break-all">
+            class="font-bold text-3xl tracking-wider break-all">
             {{ firstBlog.title }}
           </RouterLink>
         </h1>
@@ -42,7 +42,6 @@
         class="flex items-center justify-between border-t border-gray-200 px-4 ">
         <!-- Previous page button -->
         <a
-          href="#"
           class="inline-flex items-center border-t-2 border-transparent pr-1 pt-4 text-sm font-medium text-gray-500"
           @click="goToPage(currentPage - 1)"
           :disabled="currentPage === 1">
@@ -57,7 +56,6 @@
         <div class="block">
           <template v-for="page in totalPages" :key="page">
             <a
-              href="#"
               class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium"
               :class="{
                 'border-primary_p text-primary_p': currentPage === page,
@@ -72,7 +70,6 @@
 
         <!-- Next page button -->
         <a
-          href="#"
           class="inline-flex items-center border-t-2 border-transparent pl-1 pt-4 text-sm font-medium text-gray-500 hover:border-terciary_p hover:text-terciary_p"
           @click="goToPage(currentPage + 1)"
           :disabled="currentPage === totalPages">

@@ -7,7 +7,7 @@
         class="object-cover w-full h-96 pb-4"
       />
     </div>
-    <h2 class="font-regular text-gray_p tracking-widest text-xl uppercase pb-2">
+    <h2 class="font-light text-gray_p tracking-widest text-xl uppercase pb-2">
       {{ blog.category }}
     </h2>
     <RouterLink
