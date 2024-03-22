@@ -15,7 +15,7 @@
           </div>
           <div v-if="props.data.button.text" class="flex justify-start">
               <button class="p-4 h-auto relative inline-block custom-background font-regular">
-                <a class="text-lg border-b-2 border-black pe-4">{{ props.data.button.text }}</a>
+                <a :href="props.data.button.link" class="text-lg border-b-2 border-black pe-4">{{ props.data.button.text }}</a>
               </button>
           </div>
       </div>
