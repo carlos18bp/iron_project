@@ -7,7 +7,7 @@
   <section id="goToDownHome" class="my-28 px-16">
     <div class="flex justify-evenly">
       <div class="inline-block">
-        <img src="@/assets/images/home/carousel/OrnamentalWorks.jpg" class="w-72" alt="Ornamental carousel"/>
+        <img src="@/assets/images/home/carousel/OrnamentalWorks.png" class="w-72" alt="Ornamental carousel"/>
         <div class="flex justify-center h-24">
           <div
             class="w-3/4 px-4 py-2 h-full bg-gray_p grid justify-center content-center mt-2">
@@ -106,7 +106,7 @@
   import RightTarget from "@/components/layouts/RightTarget.vue";
   import LeftTarget from "@/components/layouts/LeftTarget.vue";
   import Carousel from "@/components/layouts/Carousel.vue";
-  import url from "@/assets/images/initialBanners/Home.jpg";
+  import url from "@/assets/images/initialBanners/Home.png";
   import image1 from "@/assets/images/home/History1.png";
   import image2 from "@/assets/images/home/History2.png";
   import image3 from "@/assets/images/home/History3.png";

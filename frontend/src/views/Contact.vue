@@ -22,7 +22,7 @@
   import Footer from "@/components/layouts/Footer.vue";
   import CallToAction from "@/components/layouts/CallToAction.vue";
   import InitialBanner from "@/components/layouts/InitialBanner.vue";
-  import url from "@/assets/images/initialBanners/Contact.jpeg";
+  import url from "@/assets/images/initialBanners/Contact.png";
   import Form from "@/components/contact/Form.vue";
   import FAQ from "@/components/contact/FAQ.vue";
 

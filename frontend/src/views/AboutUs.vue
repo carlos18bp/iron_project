@@ -75,11 +75,11 @@
       url: image4,
       alt: "Image History 1",
     },
-    text: "175 SW 7th St, Suite 1524 <br>Miami, Florida <br>33130 <br><br>info@artisaniron.co <br><br>Phone: +571 5523012 <br>Mobile: +57 3182064153",
+    text: "175 SW 7th St, Suite 1524 <br>Miami, Florida <br>33130 <br><br>info@artisaniron.co",
     button: {
       text: "",
       link: "",
     },
-    title: "Artisian Iron",
+    title: "Artisan Iron",
   };
 </script>
