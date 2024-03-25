@@ -62,7 +62,7 @@ export const useUserStore = defineStore("user", {
      */
     async createRequest(formData) {
       let response = await create_request(
-        "/api/create_user/",
+        "/create_user/",
         JSON.stringify(formData)
       );
 

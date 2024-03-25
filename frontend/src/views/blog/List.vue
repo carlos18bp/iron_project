@@ -5,7 +5,7 @@
       <div class="w-full">
         <img
           v-if="firstBlog && firstBlog.image_url"
-          :src="`/api/${firstBlog.image_url}`"
+          :src="`${firstBlog.image_url}`"
           class="w-full object-cover"
         />
       </div>

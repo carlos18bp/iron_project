@@ -29,7 +29,7 @@
         <RouterLink class="font-light" :to="{ name: 'about_us' }">about us</RouterLink>
       </a>
       <a>
-        <RouterLink class="font-light" :to="{ name: 'blogs' }">blogs</RouterLink>
+        <RouterLink class="font-light" :to="{ name: 'blog_list' }">blog</RouterLink>
       </a>
     </div>
   </header>

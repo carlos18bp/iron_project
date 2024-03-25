@@ -5,7 +5,7 @@
       <div class="w-full max-h-96 flex items-center justify-center">
         <img
           v-if="blog && blog.image_url"
-          :src="`/api/${blog.image_url}`"
+          :src="`${blog.image_url}`"
           class="object-cover w-full h-full"
         />
       </div>

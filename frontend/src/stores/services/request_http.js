@@ -3,7 +3,7 @@ axios.defaults.withCredentials = true;
 axios.defaults.xsrfCookieName = "csrftoken";
 axios.defaults.xsrfHeaderName = "X-CSRFToken";
 
-const route = "http://127.0.0.1:8000/";
+const route = window.location.origin;
 
 /**
  * Request endpoint
@@ -22,7 +22,8 @@ async function makeRequest(method, url, params = {}) {
 
     switch (method) {
       case "GET":
-        response = await axios.get(`${route}${url}`, { headers });
+        console.log(url)
+        response = await axios.get(route + '/' + url);
         break;
       case "POST":
         response = await axios.post(url, params, { headers });
