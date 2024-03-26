@@ -68,8 +68,7 @@
 </template>
 
 <script setup>
-  import { onMounted, ref } from "vue";
-  import { initFlowbite } from "flowbite";
+  import { onMounted, ref, watchEffect } from "vue";
   import { useUserStore } from "@/stores/user";
   import Header from "@/components/layouts/Header.vue";
   import Footer from "@/components/layouts/Footer.vue";
@@ -77,9 +76,10 @@
   const userStore = useUserStore();
   const users = ref([]);
 
-  onMounted(async () => {
-    initFlowbite();
-    await userStore.init();
+  onMounted(async () => await userStore.init());
+
+  watchEffect(async () => {
+    await userStore.fetchUsersData();
     users.value = userStore.users;
   });
 </script>
